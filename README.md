@@ -11,10 +11,13 @@ cd bin
 ```
 
 ##Arguments 
+
 ###$1 : Specify the maximum size, in bytes, of the memory allocation pool (JVM).
+
 1024 
 
 ###$2 : Specify the file used for the Demo
+
 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
 
 Example output for the El Camino north ride (from Udacity):
