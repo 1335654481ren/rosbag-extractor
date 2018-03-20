@@ -8,17 +8,7 @@ In the next phase, we add an OpenTSDB exporter for metrics data.
 
 ## Quickstart
 
-Please load the example data from Udacity with the torrent file stored in __. /data__.
-
-Build an package the project, and finally run the demo runner script.
-
-```
-mvn clean compile package
-cd bin
-./run_demo.sh 1024 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
-```
-
-## Run OpenTSDB
+### Run OpenTSDB
 An OpenTSDB host is provided on Dockerhub:
 
 ```
@@ -29,6 +19,19 @@ docker run \
 Now, we can point the browser to http://127.0.0.1:4242 to show the OpenTSDB web interface.
 
 You can also build your own OpenTSDB image based on this repository: https://github.com/kamir/docker-opentsdb 
+
+### Prepare Demo Data
+
+Please load the example data from Udacity with the torrent file stored in __. /data__.
+
+### Build the Tool
+Build an package the project, and finally run the demo runner script.
+
+```
+mvn clean compile package
+cd bin
+./run_demo.sh 1024 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
+```
 
 ### Demo Runner Script: Arguments 
 
