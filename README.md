@@ -19,14 +19,16 @@ cd bin
 ```
 
 ## Run OpenTSDB
+An OpenTSDB host is provided on Dockerhub:
 
 ```
 docker run \
     -p 4242:4242 \
     jleight/opentsdb
 ```
-
 Now, we can point the browser to http://127.0.0.1:4242 to show the OpenTSDB web interface.
+
+You can also build your own OpenTSDB image based on this repository: https://github.com/kamir/docker-opentsdb 
 
 ### Demo Runner Script: Arguments 
 
