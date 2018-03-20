@@ -1,6 +1,9 @@
+# ROSBAG Extractor
+
 This example shows how you can extract ROS-BAG files using the Java library 
 _com.github.swrirobotics.bags.reader_.
 
+## Quickstart
 
 Please load the data from Udacity with the torrent file stored in __. /data__.
 
@@ -10,15 +13,17 @@ cd bin
 ./run_demo.sh 1024 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
 ```
 
-##Arguments 
+### Arguments 
 
-###$1 : Specify the maximum size, in bytes, of the memory allocation pool (JVM).
+#### $1 : Specify the maximum size, in bytes, of the memory allocation pool (JVM).
 
 1024 
 
-###$2 : Specify the file used for the Demo
+#### $2 : Specify the file used for the Demo
 
 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
+
+## Output
 
 Example output for the El Camino north ride (from Udacity):
 
