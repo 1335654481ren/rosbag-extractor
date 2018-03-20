@@ -1,11 +1,16 @@
 # ROSBAG Extractor
 
-This example shows how you can extract ROS-BAG files using the Java library 
+This example shows how you extract ROS-BAG files using the Java library 
 _com.github.swrirobotics.bags.reader_.
+
+First, data is dumped to the console. Image files are extracted to a local staging directory.
+In the next phase, we add an OpenTSDB exporter for metrics data.
 
 ## Quickstart
 
-Please load the data from Udacity with the torrent file stored in __. /data__.
+Please load the example data from Udacity with the torrent file stored in __. /data__.
+
+Build an package the project, and finally run the demo runner script.
 
 ```
 mvn clean compile package
@@ -13,7 +18,17 @@ cd bin
 ./run_demo.sh 1024 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
 ```
 
-### Arguments 
+## Run OpenTSDB
+
+```
+docker run \
+    -p 4242:4242 \
+    jleight/opentsdb
+```
+
+Now, we can point the browser to http://127.0.0.1:4242 to show the OpenTSDB web interface.
+
+### Demo Runner Script: Arguments 
 
 #### $1 : Specify the maximum size, in bytes, of the memory allocation pool (JVM).
 
