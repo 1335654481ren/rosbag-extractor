@@ -3,6 +3,12 @@
 cd ..
 
 #
+# Please prepare the OpenTSDB engine, e.g., using a docker container in your Dev environment.
+#
+# OpenTSDB is available: https://github.com/kamir/docker-opentsdb
+#
+
+#
 # ./run_demo.sh 1024 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
 #
 
