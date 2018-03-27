@@ -1,7 +1,35 @@
-This example shows how you can extract ROS-BAG files using the Java library 
-_com.github.swrirobotics.bags.reader_.
+# ROSBAG Extractor
 
-Please load the data from Udacity with the torrent file stored in __. /data__.
+This example project illustrates how to extract ROS-BAG files using a Java library.
+The work is based on the project: _com.github.swrirobotics.bags.reader_.
+
+### Features:
++ Metadata is extracted as RDF graph. 
++ Image files are extracted to a local staging directory.
++ Metrics or time series are exported into time series buckets and/or to OpenTSDB.
+
+
+## Quickstart
+
+### Run OpenTSDB
+An OpenTSDB host is provided on Dockerhub:
+
+```
+docker run \
+    -p 4242:4242 \
+    jleight/opentsdb
+```
+Now, we can point the browser to http://127.0.0.1:4242 to show the OpenTSDB web interface.
+
+You can also build your own OpenTSDB image based on this repository: https://github.com/kamir/docker-opentsdb 
+
+### Prepare Demo Data
+
+Please load the example data from Udacity with the torrent file stored in __. /data__.
+
+### Build the Tool
+Build an package the project, and finally run the demo runner script.
+ 
 
 ```
 mvn clean compile package
@@ -9,12 +37,17 @@ cd bin
 ./run_demo.sh 1024 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
 ```
 
-##Arguments 
-###$1 : Specify the maximum size, in bytes, of the memory allocation pool (JVM).
+### Demo Runner Script: Arguments 
+
+#### $1 : Specify the maximum size, in bytes, of the memory allocation pool (JVM).
+
 1024 
 
-###$2 : Specify the file used for the Demo
+#### $2 : Specify the file used for the Demo
+
 /Volumes/DS-Tools/IWH/raw_image_stage/udacity/self_driving_car/el_camino_north.bag
+
+## Output
 
 Example output for the El Camino north ride (from Udacity):
 

@@ -277,7 +277,6 @@
     <orderEntry type="library" name="Maven: org.reflections:reflections:0.9.10" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.19.0-GA" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:annotations:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jena:jena:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-imaging:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: net.opentsdb:opentsdb:2.4.0RC1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.3" level="project" />

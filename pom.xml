@@ -98,15 +98,8 @@
             <version>${nd4j.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.jena/jena-core -->
-        <dependency>
-            <groupId>org.apache.jena</groupId>
-            <artifactId>jena</artifactId>
-            <version>3.6.0</version>
-        </dependency>
 
-
-        <!-- Please build this lib locally using the script: build_commons_imaging_locally.s in ciw-infra-devnode -->
+      <!-- Please build this lib locally using the script: build_commons_imaging_locally.s in ciw-infra-devnode -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-imaging</artifactId>
