@@ -1,6 +1,6 @@
 package core;
 
-import datasets.examples.ExampleBAGFile;
+import datasets.examples.UdacityExampleBAGFile;
 import imagecontainers.rosbag.extractors.ExtractImageMessage;
 import imagecontainers.rosbag.extractors.ExtractTimeSeriesByMetric;
 
@@ -15,7 +15,14 @@ public class Demo3 {
 
     public static void main( String[] ARGS ) throws Exception {
 
-        ExampleBAGFile example = new ExampleBAGFile();
+        UdacityExampleBAGFile example = new UdacityExampleBAGFile();
+
+        if ( ARGS != null ) {
+            if ( ARGS.length > 0 ) {
+                String fn = ARGS[0];
+                example.init(fn);
+            }
+        }
 
         System.out.println( ">>> BAG Extraction DEMO ... ");
         System.out.println( ">>> BAG file: " + example.path );
@@ -29,8 +36,13 @@ public class Demo3 {
             System.out.println( ">   Extraction of images ... ");
             ExtractImageMessage.process( example.path );
 
-            System.out.println( ">   Extraction of presure data ... ");
-            ExtractTimeSeriesByMetric.process( example.path );
+            try {
+                System.out.println(">   Extraction of presure data ... ");
+                ExtractTimeSeriesByMetric.process(example.path);
+            }
+            catch(Exception ex) {
+                System.out.println(">   NO PRESURE DATA AVAILABLE." );
+            }
 
         }
     }

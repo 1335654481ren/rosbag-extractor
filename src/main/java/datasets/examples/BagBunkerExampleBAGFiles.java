@@ -9,7 +9,7 @@ import java.io.FileFilter;
 /**
  * Created by kamir on 08.01.18.
  */
-public class BAGBunkerExampleBAGFiles extends BagFileDataSet {
+public class BagBunkerExampleBAGFiles extends BagFileDataSet {
 
     public static void init(String fn) {
         File f = new File( fn );
@@ -21,7 +21,7 @@ public class BAGBunkerExampleBAGFiles extends BagFileDataSet {
     }
 
     public File[] getBagFiles(){
-        BAGBunkerExampleBAGFiles bbf = new BAGBunkerExampleBAGFiles();
+        BagBunkerExampleBAGFiles bbf = new BagBunkerExampleBAGFiles();
         bbf.init();
         File folder = new File( path );
         return folder.listFiles( ff );

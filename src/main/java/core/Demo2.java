@@ -1,6 +1,6 @@
 package core;
 
-import datasets.examples.BAGBunkerExampleBAGFiles;
+import datasets.examples.BagBunkerExampleBAGFiles;
 
 public class Demo2 {
 
@@ -8,7 +8,14 @@ public class Demo2 {
 
     public static void main( String[] ARGS ) throws Exception {
 
-        BAGBunkerExampleBAGFiles bagbunkerData = new BAGBunkerExampleBAGFiles();
+        BagBunkerExampleBAGFiles bagbunkerData = new BagBunkerExampleBAGFiles();
+
+        if ( ARGS != null ) {
+            if ( ARGS.length > 0 ) {
+                String fn = ARGS[0];
+                bagbunkerData.init(fn);
+            }
+        }
 
         bagbunkerData.persistBAGFileMetadata();
 
