@@ -21,6 +21,21 @@
                   <exclude>junit:junit</exclude>
                 </excludes>
               </artifactSet>
+              <transformers>
+                <transformer>
+                  <resource>META-INF/cxf/bus-extensions.txt</resource>
+                </transformer>
+              </transformers>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
             </configuration>
           </execution>
         </executions>
