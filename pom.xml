@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cloudera</groupId>
-    <artifactId>rosbag-demo</artifactId>
+    <artifactId>rosbag-extractor</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 
     <properties>
@@ -57,18 +57,34 @@
     </properties>
 
     <dependencies>
+    
+        <dependency>
+            <groupId>com.cloudera</groupId>
+            <artifactId>hadoop-ts-ng</artifactId>
+            <version>2.5.0</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.github.kamir</groupId>
+            <artifactId>rosbag-reader-java</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+
+
+
+
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        
         <dependency>
             <groupId>com.neovisionaries</groupId>
             <artifactId>nv-websocket-client</artifactId>
             <version>2.4-SNAPSHOT</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.swri-robotics</groupId>
-            <artifactId>bag-reader-java</artifactId>
-            <version>1.9.0</version>
-        </dependency>
 
         <dependency>
             <groupId>org.nd4j</groupId>
@@ -81,6 +97,14 @@
             <artifactId>nd4j-native</artifactId>
             <version>${nd4j.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.jena/jena-core -->
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+
 
         <!-- Please build this lib locally using the script: build_commons_imaging_locally.s in ciw-infra-devnode -->
         <dependency>
@@ -88,6 +112,57 @@
             <artifactId>commons-imaging</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/net.opentsdb/opentsdb -->
+        <dependency>
+            <groupId>net.opentsdb</groupId>
+            <artifactId>opentsdb</artifactId>
+            <version>2.4.0RC1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-core</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-sdk</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <!-- Hadoop -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+            <version>2.6.0-mr1-cdh5.11.1</version>
+        </dependency>
+        <!-- Hive -->
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-exec</artifactId>
+            <version>1.1.0-cdh5.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-metastore</artifactId>
+            <version>1.1.0-cdh5.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-common</artifactId>
+            <version>1.1.0-cdh5.11.1</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -113,7 +188,43 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+    
+        <repositories>
+
+        <repository>
+            <id>cdh.repo</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
+            <name>Cloudera Repositories</name>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>cdh.snapshots.repo</id>
+            <url>https://repository.cloudera.com/artifactory/libs-snapshot-local</url>
+            <name>Cloudera Snapshots Repository</name>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+
+    </repositories>
+
+
+
 
 </project>

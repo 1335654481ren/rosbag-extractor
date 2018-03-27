@@ -10,5 +10,8 @@ echo "$1 : Specify the maximum size, in bytes, of the memory allocation pool (JV
 echo "$2 : Specify the file used for the Demo"
 echo
 
-java -Xmx$1m -cp ./target/rosbag-demo-0.1.0-SNAPSHOT.jar core.Demo $2
+java -Xmx$1m -cp ./target/rosbag-demo-0.1.0-SNAPSHOT.jar core.Demo1 $2
 
+java -Xmx$1m -cp ./target/rosbag-demo-0.1.0-SNAPSHOT.jar core.Demo2 $2
+
+java -Xmx$1m -cp ./target/rosbag-demo-0.1.0-SNAPSHOT.jar core.Demo2 $2

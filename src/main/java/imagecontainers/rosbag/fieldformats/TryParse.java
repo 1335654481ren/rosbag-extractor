@@ -1,4 +1,4 @@
-package image.utils.fieldformats;
+package imagecontainers.rosbag.fieldformats;
 
 
 public class TryParse {

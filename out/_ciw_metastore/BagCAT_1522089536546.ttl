@@ -1,0 +1,82 @@
+[ a       <http://www.w3.org/ns/bagcat#BagFileTopic> ;
+  <http://www.w3.org/ns/bagcat#md5>
+          "acffd30cd6b6de30f120938c17c593fb" ;
+  <http://www.w3.org/ns/bagcat#messageType>
+          "rosgraph_msgs/Log" ;
+  <http://www.w3.org/ns/bagcat#nrOfConnections>
+          "2" ;
+  <http://www.w3.org/ns/bagcat#topicAvailableInBagFile>
+          </GITHUB.cloudera.internal/rosbag-extractor/data/prefix_2015-03-06-14-32-20.bag> ;
+  <http://www.w3.org/ns/bagcat#topicName>
+          "/rosout"
+] .
+
+<http://com.mybiz.datacatalog/bags>
+        <http://www.w3.org/ns/bagcat#name>
+                "MyBagCatalog" .
+
+[ a       <http://www.w3.org/ns/bagcat#BagFileTopic> ;
+  <http://www.w3.org/ns/bagcat#md5>
+          "acffd30cd6b6de30f120938c17c593fb" ;
+  <http://www.w3.org/ns/bagcat#messageType>
+          "rosgraph_msgs/Log" ;
+  <http://www.w3.org/ns/bagcat#nrOfConnections>
+          "1" ;
+  <http://www.w3.org/ns/bagcat#topicAvailableInBagFile>
+          </GITHUB.cloudera.internal/rosbag-extractor/data/prefix_2015-03-06-14-32-20.bag> ;
+  <http://www.w3.org/ns/bagcat#topicName>
+          "/rosout_agg"
+] .
+
+</GITHUB.cloudera.internal/rosbag-extractor/data/prefix_2015-03-06-14-32-20.bag>
+        <http://www.w3.org/ns/bagcat#availableInBagCatalog>
+                <http://com.mybiz.datacatalog/bags> ;
+        <http://www.w3.org/ns/bagcat#byteSize>
+                "62209" ;
+        <http://www.w3.org/ns/bagcat#compression>
+                "none" ;
+        <http://www.w3.org/ns/bagcat#duration>
+                "11.021 s" ;
+        <http://www.w3.org/ns/bagcat#end>
+                "2015-03-06 14:32:32.041123582 (1425648752041)" ;
+        <http://www.w3.org/ns/bagcat#filename>
+                "/GITHUB.cloudera.internal/rosbag-extractor/data/prefix_2015-03-06-14-32-20.bag" ;
+        <http://www.w3.org/ns/bagcat#nrOfMessages>
+                "308" , "12345" ;
+        <http://www.w3.org/ns/bagcat#sizeInMB>
+                "60.7509765625 MB" ;
+        <http://www.w3.org/ns/bagcat#start>
+                "2015-03-06 14:32:21.0209104 (1425648741020)" ;
+        <http://www.w3.org/ns/bagcat#version>
+                "2.0" .
+
+[ a       <http://www.w3.org/ns/bagcat#BagFileType> ;
+  <http://www.w3.org/ns/bagcat#md5>
+          "acffd30cd6b6de30f120938c17c593fb" ;
+  <http://www.w3.org/ns/bagcat#messageType>
+          "rosgraph_msgs/Log" ;
+  <http://www.w3.org/ns/bagcat#topicAvailableInBagFile>
+          </GITHUB.cloudera.internal/rosbag-extractor/data/prefix_2015-03-06-14-32-20.bag>
+] .
+
+[ a       <http://www.w3.org/ns/bagcat#BagFileType> ;
+  <http://www.w3.org/ns/bagcat#md5>
+          "992ce8a1687cec8c8bd883ec73ca41d1" ;
+  <http://www.w3.org/ns/bagcat#messageType>
+          "std_msgs/String" ;
+  <http://www.w3.org/ns/bagcat#topicAvailableInBagFile>
+          </GITHUB.cloudera.internal/rosbag-extractor/data/prefix_2015-03-06-14-32-20.bag>
+] .
+
+[ a       <http://www.w3.org/ns/bagcat#BagFileTopic> ;
+  <http://www.w3.org/ns/bagcat#md5>
+          "992ce8a1687cec8c8bd883ec73ca41d1" ;
+  <http://www.w3.org/ns/bagcat#messageType>
+          "std_msgs/String" ;
+  <http://www.w3.org/ns/bagcat#nrOfConnections>
+          "1" ;
+  <http://www.w3.org/ns/bagcat#topicAvailableInBagFile>
+          </GITHUB.cloudera.internal/rosbag-extractor/data/prefix_2015-03-06-14-32-20.bag> ;
+  <http://www.w3.org/ns/bagcat#topicName>
+          "/chatter"
+] .

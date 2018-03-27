@@ -27,6 +27,25 @@
       </plugin>
     </plugins>
   </build>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>cdh.repo</id>
+      <name>Cloudera Repositories</name>
+      <url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots />
+      <id>cdh.snapshots.repo</id>
+      <name>Cloudera Snapshots Repository</name>
+      <url>https://repository.cloudera.com/artifactory/libs-snapshot-local</url>
+    </repository>
+  </repositories>
   <properties>
     <javafx.version>2.2.3</javafx.version>
     <datavec.version>0.9.1</datavec.version>

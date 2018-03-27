@@ -1,4 +1,4 @@
-package image.utils;
+package core;
 
 import java.util.Map;
 

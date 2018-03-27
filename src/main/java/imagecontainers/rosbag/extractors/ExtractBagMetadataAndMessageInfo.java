@@ -1,11 +1,10 @@
-package imagecontainers.rosbag;
+package imagecontainers.rosbag.extractors;
 
 import com.github.swrirobotics.bags.reader.BagFile;
 import com.github.swrirobotics.bags.reader.BagReader;
 import com.github.swrirobotics.bags.reader.TopicInfo;
 import com.github.swrirobotics.bags.reader.exceptions.BagReaderException;
 import com.github.swrirobotics.bags.reader.messages.serialization.MessageType;
-import datasets.ExampleBAGFile;
 
 import java.io.File;
 import java.util.Vector;
@@ -15,27 +14,31 @@ import java.util.Vector;
  *
  * Created by kamir on 08.01.18.
  */
-public class ListMessageInfo {
+public class ExtractBagMetadataAndMessageInfo {
 
     public static void main(String[] args) throws BagReaderException {
 
         String fns = args[0];
 
-        ExampleBAGFile.init( fns );
+        processBAGFile( new File(fns) );
+
+    }
+
+    public static void processBAGFile(File bag) throws BagReaderException {
 
         long begin = System.currentTimeMillis();
 
-        File fn = new File( ExampleBAGFile.path );
-        System.out.println("\n[File]");
+        File fn = bag;
+        System.out.println("\n\t[File]");
         System.out.println( "\t" + fn.getAbsolutePath() + " - " + fn.canRead() + "\n" );
 
-        BagFile file = BagReader.readFile( ExampleBAGFile.path );
+        BagFile file = BagReader.readFile( bag.getAbsoluteFile() );
 
         Vector<String> topics = new Vector<String>();
 
-        System.out.println("\n[BAG Metadata]");
+        System.out.println("\n\t[BAG Metadata]");
 
-        String path = ExampleBAGFile.path;
+        String path = bag.getAbsolutePath();
         String startT = file.getStartTime().toString();
         String endT = file.getEndTime().toString();
         String duration = file.getDurationS() + " s";
@@ -47,9 +50,7 @@ public class ListMessageInfo {
         System.out.println("\tduration [s]: " + duration );
         System.out.println("\tcompression : " + compressionType );
 
-
-
-        System.out.println("\n\n[Topics]");
+        System.out.println("\n\n\t[Topics]");
 
         for (TopicInfo topic : file.getTopics()) {
             System.out.println( "\t" + topic.getName() + " \t\t" + topic.getMessageCount() +
@@ -58,20 +59,17 @@ public class ListMessageInfo {
             topics.add(topic.getName());
         }
 
-        ImageMessageHandler mh = new ImageMessageHandler( ExampleBAGFile.path );
-
-
-
-        System.out.println("\n\n[Schema of Messages per Topic]");
+        System.out.println("\n\n\t[Schema of Messages per Topic]");
+        System.out.println("\n\t{topicname} [MD5]  package ");
 
         for( String tn : topics ) {
 
             MessageType mt = file.getFirstMessageOnTopic( tn );
 
-            System.out.println("\n{"+ tn +"} [MD5:"+ mt.getMd5Sum() + "]  package: " + mt.getPackage());
+            System.out.println("\n\t{"+ tn +"} [MD5:"+ mt.getMd5Sum() + "]  package: " + mt.getPackage());
 
             for( String fieldName : mt.getFieldNames() ) {
-               System.out.println( "\t\t" + fieldName + " => " + mt.getField( fieldName).getType() );
+                System.out.println( "\t\t" + fieldName + " => " + mt.getField( fieldName).getType() );
             }
 
         }
@@ -80,7 +78,16 @@ public class ListMessageInfo {
 
         double delta = (end-begin) / 1000.0;
 
-        System.out.println( "\n\n[Inspection Time] " + delta );
+        System.out.println( "\n\n\t[Inspection Time] " + delta );
+
+        try {
+
+            file.printRDFInfo();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

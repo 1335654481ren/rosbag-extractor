@@ -1,4 +1,4 @@
-package imagecontainers.rosbag;
+package imagecontainers.rosbag.messagehandler;
 
 import com.github.swrirobotics.bags.reader.MessageHandler;
 import com.github.swrirobotics.bags.reader.messages.serialization.ArrayType;
@@ -16,9 +16,16 @@ import java.io.FileOutputStream;
  */
 public class ImageMessageHandler implements MessageHandler {
 
-    public ImageMessageHandler( String basePathToStore ) {
-        basePath = new File( basePathToStore );
+    public static int limit = 5;
 
+    public ImageMessageHandler( String basePathToStore ) {
+        i = 0;
+        basePath = new File( basePathToStore );
+    }
+
+    public boolean postProcessTrigger() {
+        System.out.print(">>> [" + i + "] messages for topic: " + topic_type + " have been processed by handle: " + this.getClass().getCanonicalName() );
+        return true;
     }
 
     // Which messages should the hanlder handle?
@@ -41,15 +48,35 @@ public class ImageMessageHandler implements MessageHandler {
 
             i++;
 
-            ArrayType data = message.getField("data");
-            byte[] dataBytes = data.getAsBytes();
+            if ( i < (limit+1) ) {
 
-            BufferedImage originalImage = ImageIO.read( new ByteArrayInputStream( dataBytes ) );
 
-            FileOutputStream fout = new FileOutputStream( new File( basePath.getAbsolutePath() + "_" + fn_prefix + "_" + i + ".jpg" ) );
-            ImageIO.write(originalImage, "jpg", fout);
+                /**
+                 * PERSIST LOCALLY in staging folder ... (PATH 1.1)
+                 */
+                ArrayType data = message.getField("data");
+                byte[] dataBytes = data.getAsBytes();
 
-            fout.flush();
+                // TODO: use message ID instead of a running number ... i
+                BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(dataBytes));
+
+                FileOutputStream fout = new FileOutputStream(new File(basePath.getAbsolutePath() + "/" + fn_prefix + "_" + i + ".jpg"));
+                ImageIO.write(originalImage, "jpg", fout);
+
+                fout.flush();
+
+
+                /**
+                 * PERSIST VIA CIW-IAL API in cluster ...
+                 *
+                 * TODO: implement PATH 2.1 / 2.2
+                 */
+
+                return true;
+            }
+            else {
+                return false;
+            }
 
         }
         catch (Exception e) {
@@ -61,5 +88,6 @@ public class ImageMessageHandler implements MessageHandler {
 
         return true;
     }
+
 
 }

@@ -1,7 +1,6 @@
 This example shows how you can extract ROS-BAG files using the Java library 
 _com.github.swrirobotics.bags.reader_.
 
-
 Please load the data from Udacity with the torrent file stored in __. /data__.
 
 ```
