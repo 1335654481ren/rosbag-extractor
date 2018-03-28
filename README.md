@@ -1,7 +1,11 @@
 # ROSBAG Extractor
 
+__This module is an external CIW component. 
+Not in the maitenance scope of CIW, but related.__
+
 This example project illustrates how to extract ROS-BAG files using a Java library.
 The work is based on the project: _com.github.swrirobotics.bags.reader_.
+
 
 ### Features:
 + Metadata is extracted as RDF graph. 

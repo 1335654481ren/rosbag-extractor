@@ -21,6 +21,12 @@
                   <exclude>junit:junit</exclude>
                 </excludes>
               </artifactSet>
+              <relocations>
+                <relocation>
+                  <pattern>com.google.common</pattern>
+                  <shadedPattern>shaded.com.google.common</shadedPattern>
+                </relocation>
+              </relocations>
               <transformers>
                 <transformer>
                   <resource>META-INF/cxf/bus-extensions.txt</resource>
