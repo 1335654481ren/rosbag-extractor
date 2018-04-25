@@ -1,4 +1,4 @@
-package datasets.examples;
+package data.examples;
 
 import datasets.BagFileDataSet;
 

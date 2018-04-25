@@ -26,14 +26,14 @@
         <java.version>1.8</java.version>
 
         <nd4j.version>0.9.1</nd4j.version>
-        <dl4j.version>0.9.1</dl4j.version>
+        <ciw.dl4j.version>0.9.1</ciw.dl4j.version>
         <datavec.version>0.9.1</datavec.version>
         <arbiter.version>0.9.1</arbiter.version>
         <rl4j.version>0.9.1</rl4j.version>
         <dcm4che.version>5.13.0</dcm4che.version>
 
         <!-- For Spark examples: change the _1 to _2 to switch between Spark 1 and Spark 2 -->
-        <dl4j.spark.version>0.9.1_spark_1</dl4j.spark.version>
+        <ciw.dl4j.spark.version>0.9.1_spark_1</ciw.dl4j.spark.version>
         <datavec.spark.version>0.9.1_spark_1</datavec.spark.version>
 
         <!-- Scala binary version: DL4J's Spark and UI functionality are released with both Scala 2.10 and 2.11 support -->

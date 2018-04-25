@@ -1,6 +1,6 @@
 package core;
 
-import datasets.examples.UdacityExampleBAGFile;
+import data.examples.UdacityExampleBAGFile;
 import imagecontainers.rosbag.extractors.ExtractImageMessage;
 import imagecontainers.rosbag.extractors.ExtractTimeSeriesByMetric;
 
